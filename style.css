@@ -1,0 +1,284 @@
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+:root {
+    --body: #121212;
+    --header-color: #FFFEFD;
+    --text-color-alt: #BDBDBD;
+    --text-color: #222;
+    --btn-color: #2DD3AB;
+    --border-radius: 0.625rem;
+    --font-header: 'Poppins-Bold', sans-serif;
+    --font-text: 'Poppins-Regular', sans-serif;
+    --avatar-border: 3px dashed #2DD3AB;
+}
+
+
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Set core root defaults */
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+html {
+    font-family: var(--font-text);
+    -webkit-font-smoothing: antialiased;
+    box-sizing: inherit;
+    font-size: 62.5%;
+}
+
+
+/* Set core body defaults */
+
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+
+/* Make images easier to work with */
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* ==========GLOBAL STYLES=========== */
+
+.container {
+    width: 100%;
+    max-width: 567px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-inline-start: 30px;
+    padding-inline-end: 30px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    padding: 18px 45px;
+    border-radius: 0.625rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn--primary {
+    background-color: var(--btn-color);
+    color: var(--text-color);
+}
+
+.btn--outline {
+    border: thin solid var(--btn-color);
+}
+
+.avatars {
+    border: thin solid var(--btn-color);
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: var(--font-header);
+    color: var(--header-color);
+}
+
+p,
+span {
+    font-size: 1.6rem;
+    color: var(--text-color-alt);
+}
+
+
+/* ===========MAIN STYLE=========== */
+
+.zuri--card {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+    background-color: var(--body);
+    text-align: center;
+}
+
+.zuri--card--img {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    background-image: url('img/zuri--card--img.jpg');
+    background-size: cover;
+    display: inline-block;
+    margin-bottom: 1.875rem;
+}
+
+.zuri--card--img .avatar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: var(--avatar-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--body);
+}
+
+.zuri--card--img .zuri--card--img_sm {
+    max-width: 1.875rem;
+}
+
+p {
+    margin-top: 1.875rem;
+    margin-bottom: 3.125rem;
+    line-height: 1.6;
+}
+
+.card--content--social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.card--content--social .slack {
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+.card--content--social .slack a,
+.card--content--social .Twitter a,
+.card--content--social .Figma a,
+.card--content--social .Github a,
+.card--content--social .Linkedin a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.card--content--social .Twitter .social--handle,
+.card--content--social .Figma .social--handle,
+.card--content--social .Github .social--handle,
+.card--content--social .Linkedin .social--handle {
+    display: none;
+}
+
+.btn {
+    font-size: 1.6rem;
+    margin-top: 50px;
+    display: inline-block;
+    width: 350px;
+}
+
+@media screen and (max-width: 35.4em) {
+    .container {
+        height: 100vh;
+    }
+    p,
+    span {
+        font-size: 1.4rem;
+        color: var(--text-color-alt);
+    }
+    p {
+        line-height: 1.7;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .btn {
+        font-size: 1.4rem;
+        display: inline-block;
+        margin-top: 50px;
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 25em) {
+    .card--content--social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .btn {
+        font-size: 1.4rem;
+        margin-top: 50px;
+        width: 300px;
+        flex-wrap: wrap;
+    }
+    svg {
+        max-width: 20px;
+    }
+}
+
+@media screen and (max-width: 20.625em) {
+    .btn {
+        width: 250px;
+        padding: 13px 35px;
+    }
+}
